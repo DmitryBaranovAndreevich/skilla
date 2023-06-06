@@ -1,0 +1,6 @@
+.container {
+  width: 240px;
+  height: 100vh;
+  background: var(--backround-color-dark);
+  color: rgba(var(--text-color-light), 1);
+}
