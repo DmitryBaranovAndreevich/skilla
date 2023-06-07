@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 17px 12px;
+  text-decoration: none;
+  font: 16px/24px 'SanFrancisco';
+  font-weight: 500;
+  color: var(--text-color-light1);
+}
+
+.container:hover {
+  background: rgba(216, 228, 251, 0.32);
+}
+
+.iconContainer {
+  width: 18px;
+  height: 18px;
+}
+
+.title {
+  margin: 0;
+  padding: 0 15px;
+  flex: 1 0 auto;
+}
+
+.activeIcon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bacground-color-active);
+  box-shadow: 0 3px 8px 0 rgba(237, 218, 1, 0.5);
+}

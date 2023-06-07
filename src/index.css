@@ -1,3 +1,5 @@
+@import url('./fonts/SF_Pro_Display.css');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
@@ -12,5 +14,7 @@ code {
 
 :root {
   --backround-color-dark: #091336;
+  --bacground-color-active: #FFD500;
   --text-color-light: 255, 255, 255;
+  --text-color-light1: #FFFFFF;
 }
