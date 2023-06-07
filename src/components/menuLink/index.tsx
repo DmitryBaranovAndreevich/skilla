@@ -13,7 +13,7 @@ const MenuLink: FC<IMenuLink> = ({ title, url, icon }) => {
   const [state, setState] = useState(pathname === url);
   useEffect(() => {
     setState(pathname === url);
-  }, [pathname]);
+  }, [pathname, url]);
   return (
     <Link to={url} className={styles.container + ' ' + `${state && styles.container_active}`}>
       <div className={styles.iconContainer}>{icon}</div>

@@ -10,7 +10,9 @@ body {
 
 :root {
   --backround-color-dark: #091336;
-  --bacground-color-active: #FFD500;
+  --bacground-color-active: #ffd500;
   --text-color-light: 255, 255, 255;
-  --text-color-light1: #FFFFFF;
+  --text-color-light1: #ffffff;
+  --button-backgroud-default: #002cfb;
+  --button-backgroud-hover: #0024cb;
 }

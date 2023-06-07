@@ -1,0 +1,22 @@
+.container {
+  max-width: 200px;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--button-backgroud-default);
+  border: none;
+  padding: 15px 19px 13px 13px;
+  font: 16px/24px 'SanFrancisco';
+  font-weight: 500;
+  color: var(--text-color-light1);
+  border-radius: 4px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: var(--button-backgroud-hover);
+  }
