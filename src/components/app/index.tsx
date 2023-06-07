@@ -8,7 +8,7 @@ function App() {
   return (
     <div className={styles.container}>
       <SideBar />
-      <div>
+      <div className={styles.body}>
         <Header />
         <Routes>
           <Route path="/calls" element={<Calls />} />

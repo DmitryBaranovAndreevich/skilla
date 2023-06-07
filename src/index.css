@@ -13,6 +13,7 @@ body {
   --bacground-color-active: #ffd500;
   --text-color-light: 255, 255, 255;
   --text-color-light1: #ffffff;
+  --text-color-light-grey: #899CB1;
   --button-backgroud-default: #002cfb;
   --button-backgroud-hover: #0024cb;
 }
