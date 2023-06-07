@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './menuLink.module.css';
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 
 interface IMenuLink {
   title: string;
@@ -9,11 +9,16 @@ interface IMenuLink {
 }
 
 const MenuLink: FC<IMenuLink> = ({ title, url, icon }) => {
+  const { pathname } = useLocation();
+  const [state, setState] = useState(pathname === url);
+  useEffect(() => {
+    setState(pathname === url);
+  }, [pathname]);
   return (
-    <Link to={url} className={styles.container}>
+    <Link to={url} className={styles.container + ' ' + `${state && styles.container_active}`}>
       <div className={styles.iconContainer}>{icon}</div>
       <p className={styles.title}>{title}</p>
-      <div className={styles.activeIcon}></div>
+      {state && <div className={styles.activeIcon}></div>}
     </Link>
   );
 };

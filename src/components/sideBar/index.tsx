@@ -1,12 +1,15 @@
 import MenuLink from '../menuLink';
 import styles from './sideBar.module.css';
-import { ReactComponent as TestIcon } from '../../assets/sideBar/book-icon.svg';
+import { sideBarConf } from '../../service/sideBarConfig';
+import Logo from '../logo';
 
 const SideBar = () => {
   return (
     <div className={styles.container}>
-      <p>SideBAr</p>
-      <MenuLink title={'Звонки'} url={'/calls'} icon={<TestIcon width="18" height="18" />} />
+      <Logo />
+      {sideBarConf.map(({ title, icon, path }) => (
+        <MenuLink title={title} url={path} icon={icon} key={title} />
+      ))}
     </div>
   );
 };

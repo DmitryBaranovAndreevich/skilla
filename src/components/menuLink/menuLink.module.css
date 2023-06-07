@@ -1,4 +1,5 @@
 .container {
+  opacity: .6;
   display: flex;
   align-items: center;
   padding: 17px 12px;
@@ -7,8 +8,9 @@
   font-weight: 500;
   color: var(--text-color-light1);
 }
-
+.container_active,
 .container:hover {
+  opacity: 1;
   background: rgba(216, 228, 251, 0.32);
 }
 
