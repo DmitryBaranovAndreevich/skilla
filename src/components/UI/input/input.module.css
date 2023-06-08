@@ -1,0 +1,46 @@
+.container {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 482px;
+  width: 100%;
+  padding: 10px 46px;
+  border-radius: 48px;
+}
+
+.container_active {
+  border: 1px solid #002cfb;
+}
+
+.searchIconContainer {
+  position: absolute;
+  left: 18px;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.errorMessage {
+  display: none;
+  position: absolute;
+  bottom: -25px;
+  left: 65px;
+}
+
+.closeButton {
+  display: none;
+  position: absolute;
+  background: transparent;
+  border: none;
+  right: 10px;
+  cursor: pointer;
+}
+
+.closeButton_active {
+  display: block;
+}
