@@ -2,4 +2,15 @@
   width: 80%;
   margin: 0 auto;
   padding: 21px 0;
+  display: flex;
+}
+
+.leftContainer,
+.progressContainer {
+  display: flex;
+}
+
+.progressContainer {
+  gap: 56px;
+  margin-left: 86px;
 }

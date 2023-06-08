@@ -1,0 +1,6 @@
+.textContainer {
+  margin-bottom: 7px;
+  font: 14px/21px 'SanFrancisco';
+  font-weight: 400;
+  color: var(--text-color-header-dark);
+}
