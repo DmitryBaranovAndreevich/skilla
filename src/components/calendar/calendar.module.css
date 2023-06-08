@@ -3,4 +3,5 @@
   font: 15px/22px 'SanFrancisco';
   font-weight: 400;
   color: var(--text-color-light-grey);
+  margin-top: 6px;
 }

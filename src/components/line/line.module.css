@@ -3,7 +3,7 @@
   --color-light: #DEE6F5;
   --color-dark: #000;
   height: 6px;
-  width: 100%;
+  width: 160px;
   border-radius: 12px;
   background-image: linear-gradient(
     to right,

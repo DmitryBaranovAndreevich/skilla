@@ -4,7 +4,7 @@ import { ReactComponent as LogoIcon } from '../../assets/logo.svg';
 const Logo = () => {
   return (
     <div className={styles.container}>
-      <LogoIcon width="100" height="28" />
+      <LogoIcon width="110" height="28" />
     </div>
   );
 };

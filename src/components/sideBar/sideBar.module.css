@@ -1,5 +1,5 @@
 .container {
-  width: 240px;
+  width: 275px;
   padding: 20px 0;
   background: var(--backround-color-dark);
   color: rgba(var(--text-color-light), 1);
