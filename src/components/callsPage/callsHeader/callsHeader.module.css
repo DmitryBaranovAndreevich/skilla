@@ -1,0 +1,10 @@
+.wrapper {
+  max-width: var(--max-laptop-width);
+  width: 100%;
+  padding: 17px 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 48px;
+}

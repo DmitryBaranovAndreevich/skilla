@@ -5,8 +5,10 @@
   align-items: center;
   max-width: 482px;
   width: 100%;
-  padding: 10px 46px;
+  padding: 10px 34px;
   border-radius: 48px;
+  right: 10px;
+  bottom: 5px;
 }
 
 .container_active {
@@ -15,7 +17,7 @@
 
 .searchIconContainer {
   position: absolute;
-  left: 18px;
+  left: 10px;
 }
 
 .input {
@@ -23,6 +25,12 @@
   border: none;
   outline: none;
   background: transparent;
+}
+
+.input::placeholder {
+  font: 14px/20px 'SanFrancisco';
+  font-weight: 500;
+  color: var(--text-color-grey);
 }
 
 .errorMessage {

@@ -1,0 +1,22 @@
+.container {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  padding: 8px 6px;
+  border-radius: 48px;
+  background: var(--text-color-light1);
+}
+
+.balance {
+  font: 14px/21px 'SanFrancisco';
+  font-weight: 400;
+  margin: 0;
+  color: var(--text-color-light-grey);
+}
+
+.button {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}

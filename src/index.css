@@ -14,7 +14,12 @@ body {
   --text-color-light: 255, 255, 255;
   --text-color-light1: #ffffff;
   --text-color-header-dark: #122945;
-  --text-color-light-grey: #899CB1;
+  --text-color-light-grey: #899cb1;
+  --text-color-grey: #5E7793;
   --button-backgroud-default: #002cfb;
+  --button-backgroud-default1: 0, 44, 251;
   --button-backgroud-hover: #0024cb;
+  --popover-border: #eaf0fa;
+  --content-bacground-theme1: #e5e5e5;
+  --max-laptop-width: 1440px;
 }

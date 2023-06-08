@@ -32,6 +32,7 @@ const Input = () => {
         onBlur={() => setFocus(false)}
         onFocus={() => setFocus(true)}
         onChange={hadleChange}
+        placeholder="Поиск по звонкам"
       />
       <span className={styles.errorMessage}>errormessage</span>
       <button

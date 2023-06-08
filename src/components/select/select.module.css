@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font: 14px/14px 'SanFrancisco';
+  font-weight: 400;
+  color: var(--text-color-grey);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.dropContainer {
+  position: absolute;
+  right: 0;
+  min-width: 204px;
+  background: var(--text-color-light1);
+  box-shadow: 0 0 26px 0 rgba(233, 237, 243, 0.8);
+  border: 1px solid var(--popover-border);
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  z-index: 1;
+}
+
+.dropItem {
+  font: 14px/28px 'SanFrancisco';
+  font-weight: 400;
+  color: var(--text-color-light-grey);
+  padding: 6px 20px;
+  cursor: pointer;
+}
+
+.dropItem:hover {
+  background: rgba(var(--button-backgroud-default1), 0.13);
+  color: var(--text-color-header-dark);
+}
+
+.dropItem_position_first {
+  color: var(--button-backgroud-default);
+}
