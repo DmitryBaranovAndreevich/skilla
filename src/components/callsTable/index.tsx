@@ -1,16 +1,20 @@
 import { FC } from 'react';
 import styles from './callsTable.module.css';
 import Call from '../call';
-import { mockCallItem } from '../../service/mockCallItem';
+import { TCallItem } from '../../service/mockCallItem';
+import HeaderTable from '../call/headerTable';
+import Spinner from '../spinner/spinner';
 
 interface ICallsTable {
-  callsList: [];
+  callsList?: TCallItem[];
+  isLoading?: boolean;
 }
 
-const CallsTable: FC<ICallsTable> = ({ callsList }) => {
+const CallsTable: FC<ICallsTable> = ({ callsList, isLoading = false }) => {
   return (
     <div className={styles.container}>
-      <Call {...mockCallItem} />
+      <HeaderTable />
+      {isLoading ? <Spinner /> : callsList && callsList.map((el) => <Call {...el} key={el.id} />)}
     </div>
   );
 };
