@@ -1,0 +1,33 @@
+.container {
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns:
+    minmax(20px, 50px) minmax(50px, 80px) minmax(80px, 130px) minmax(120px, 280px)
+    minmax(100px, 200px) minmax(80px, 1fr) minmax(80px, 120px);
+  grid-row: 50px;
+  justify-content: space-between;
+  justify-items: center;
+  border-bottom: 1px solid var(--popover-border);
+}
+
+.cell {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font: 15px/21px 'SanFrancisco';
+  font-weight: 400;
+  color: var(--text-color-light-grey);
+}
+
+.cell_position_start {
+  box-sizing: border-box;
+  text-align: start;
+}
+
+.cell_padding_small {
+  padding: 0 0 0 20px;
+}
+
+.cell_padding_big {
+  padding: 0 0 0 85px;
+}

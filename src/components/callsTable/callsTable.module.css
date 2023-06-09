@@ -1,0 +1,10 @@
+.container {
+  box-sizing: border-box;
+  background: var(--text-color-light1);
+  box-shadow: 0 4px 5px 0 #E9EDF3;
+  max-width: var(--max-laptop-width);
+  width: 100%;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  flex: 1 0 auto;
+}
