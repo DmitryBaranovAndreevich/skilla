@@ -8,6 +8,7 @@
   justify-content: space-between;
   justify-items: center;
   border-bottom: 1px solid var(--popover-border);
+  align-items: center;
 }
 
 .cell {
@@ -30,4 +31,12 @@
 
 .cell_padding_big {
   padding: 0 0 0 85px;
+}
+
+.avatar {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  margin: 0 auto;
 }

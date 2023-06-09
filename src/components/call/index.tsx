@@ -1,23 +1,24 @@
 import { FC } from 'react';
 import { TCallItem } from '../../service/mockCallItem';
 import styles from './call.module.css';
+import CallType from './callType';
+import TimeComponent from './timeComponent';
+import Avatar from './avatar';
+import CallNumber from './callNumber';
+import Source from './source';
+import CallTime from './callTime';
+import Estimation from './estimation';
 
-const Call: FC<TCallItem> = ({ in_out, date, person_avatar, to_number, source }) => {
+const Call: FC<TCallItem> = ({ in_out, date, person_avatar, partner_data, source, time }) => {
   return (
     <div className={styles.container}>
-      <p className={styles.cell}>Тип</p>
-      <p className={styles.cell}>Время</p>
-      <p className={styles.cell}>Сотрудник</p>
-      <p
-        className={styles.cell + ' ' + styles.cell_position_start + ' ' + styles.cell_padding_small}
-      >
-        Звонок
-      </p>
-      <p className={styles.cell}>Источник</p>
-      <p className={styles.cell + ' ' + styles.cell_position_start + ' ' + styles.cell_padding_big}>
-        Оценка
-      </p>
-      <p className={styles.cell}>Длительность</p>
+      <CallType type={in_out} />
+      <TimeComponent time={date} />
+      <Avatar url={person_avatar} />
+      <CallNumber number={partner_data.phone} />
+      <Source source={source} />
+      <Estimation />
+      <CallTime time={time} />
     </div>
   );
 };
