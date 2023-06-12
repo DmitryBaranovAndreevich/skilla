@@ -1,14 +1,19 @@
+import { useAppSelector } from '../../hooks/redux';
+import { mockStaffList } from '../../service/mockCallItem';
 import Input from '../UI/input';
-import Select from '../select';
+import Select, { SelectType } from '../select';
+import ResetButton from '../select/resetButton';
 import styles from './filter.module.css';
 
 const Filter = () => {
+  const { activeFilters } = useAppSelector((state) => state.filtersReduser);
   return (
     <div className={styles.container}>
       <Input />
       <div className={styles.selectContainer}>
+        {activeFilters.length !== 0 && <ResetButton title={'Сбросить фильтры'} />}
         <Select
-          text={'Все звонки'}
+          text={'Все типы'}
           items={[
             'Все клиенты',
             'Новые клиенты',
@@ -16,9 +21,11 @@ const Filter = () => {
             'Через приложение',
             'Прочие звонки',
           ]}
+          type={SelectType.text}
         />
+        <Select text={'Все сотрудники'} items={mockStaffList} type={SelectType.textWhithIcon} />
         <Select
-          text={'Все ошибки'}
+          text={'Все звонки'}
           items={[
             'Приветствие',
             'Имя',
@@ -28,30 +35,7 @@ const Filter = () => {
             'Благодарность',
             'Стоп слова',
           ]}
-        />
-        <Select
-          text={'Все оценки'}
-          items={[
-            'Распознать',
-            'Скрипт не использован',
-            'Цена',
-            'Скидка',
-            'Предзаказ',
-            'Благодарность',
-            'Стоп слова',
-          ]}
-        />
-        <Select
-          text={'Все сотрудники'}
-          items={[
-            'Распознать',
-            'Скрипт не использован',
-            'Цена',
-            'Скидка',
-            'Предзаказ',
-            'Благодарность',
-            'Стоп слова',
-          ]}
+          type={SelectType.text}
         />
         <Select
           text={'Все источники'}
@@ -64,9 +48,11 @@ const Filter = () => {
             'Благодарность',
             'Стоп слова',
           ]}
+          type={SelectType.text}
         />
+        <Select text={'Все оценки'} type={SelectType.reactNode} />
         <Select
-          text={'Все типы'}
+          text={'Все ошибки'}
           items={[
             'Распознать',
             'Скрипт не использован',

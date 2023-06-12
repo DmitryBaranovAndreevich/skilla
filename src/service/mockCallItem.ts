@@ -50,3 +50,8 @@ export const mockCallItem = {
 const mockRequest = () => mockCallItem;
 
 export type TCallItem = ReturnType<typeof mockRequest>;
+
+export const mockStaffList = [
+  { image: 'https://lk.skilla.ru/img/noavatar.jpg', text: 'Константин К.' },
+  { image: 'https://lk.skilla.ru/img/noavatar.jpg', text: 'Полина З.' },
+];

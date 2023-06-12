@@ -39,7 +39,7 @@ const DaySelect: FC<ISelect> = ({ text, items }) => {
           <PopOver>
             <ul className={styles.dropContainer}>
               <li className={styles.dropItem + ' ' + styles.dropItem_position_first}>{text}</li>
-              {items?.map((el) => (
+              {(items as string[])?.map((el) => (
                 <li className={styles.dropItem} key={el}>
                   {el}
                 </li>

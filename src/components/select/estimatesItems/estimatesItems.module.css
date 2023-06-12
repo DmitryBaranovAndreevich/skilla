@@ -1,0 +1,63 @@
+.badElement__container {
+  display: inline-block;
+  color: #ea1a4f;
+  border: 1px solid #ea1a4f;
+  border-radius: 4px;
+  background: #fee9ef;
+  font: 14px/14px 'SanFrancisco';
+  font-weight: 400;
+  padding: 6px 8px;
+  margin: 0;
+}
+
+.gutElement__container {
+  display: inline-block;
+  color: #122945;
+  border: 1px solid #adbfdf;
+  border-radius: 4px;
+  background: #d8e4fb;
+  font: 14px/14px 'SanFrancisco';
+  font-weight: 400;
+  padding: 6px 8px;
+  margin: 0;
+}
+
+.excellentElement__container {
+  display: inline-block;
+  color: #00a775;
+  border: 1px solid #28a879;
+  border-radius: 4px;
+  background: #dbf8ef;
+  font: 14px/14px 'SanFrancisco';
+  font-weight: 400;
+  padding: 6px 8px;
+  margin: 0;
+}
+
+.dot_mainStyles {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  color: transparent;
+  font-size: 1px;
+}
+
+.dot {
+  composes: dot_mainStyles;
+  background: #ea1a4f;
+}
+
+.dots__container {
+  display: flex;
+  gap: 2px;
+}
+
+.twoDots__dot {
+  composes: dot_mainStyles;
+  background: #adbfdf;
+}
+
+.threeDots__dot {
+  composes: dot_mainStyles;
+  background: #28a879;
+}

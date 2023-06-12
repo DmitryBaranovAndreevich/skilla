@@ -1,6 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { callsAPI } from './api/callsService';
+import filtersReduser from './reducers/FiltersSlice';
 const rootReduser = combineReducers({
+  filtersReduser,
   [callsAPI.reducerPath]: callsAPI.reducer,
 });
 

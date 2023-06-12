@@ -11,6 +11,11 @@
   align-items: center;
 }
 
+.container:hover {
+  cursor: pointer;
+  background: rgba(212, 223, 243, 0.17);
+}
+
 .cell {
   width: 100%;
   margin: 0;

@@ -11,10 +11,15 @@ interface ICallsTable {
 }
 
 const CallsTable: FC<ICallsTable> = ({ callsList, isLoading = false }) => {
+  console.log(callsList);
   return (
     <div className={styles.container}>
       <HeaderTable />
-      {isLoading ? <Spinner /> : callsList && callsList.map((el) => <Call {...el} key={el.id} />)}
+      {isLoading || !callsList ? (
+        <Spinner />
+      ) : (
+        callsList && callsList.map((el) => <Call {...el} key={el.id} />)
+      )}
     </div>
   );
 };
