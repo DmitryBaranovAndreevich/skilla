@@ -24,19 +24,7 @@ const Filter = () => {
           type={SelectType.text}
         />
         <Select text={'Все сотрудники'} items={mockStaffList} type={SelectType.textWhithIcon} />
-        <Select
-          text={'Все звонки'}
-          items={[
-            'Приветствие',
-            'Имя',
-            'Цена',
-            'Скидка',
-            'Предзаказ',
-            'Благодарность',
-            'Стоп слова',
-          ]}
-          type={SelectType.text}
-        />
+        <Select text={'Все звонки'} items={['Входящие', 'Исходящие']} type={SelectType.text} />
         <Select
           text={'Все источники'}
           items={[

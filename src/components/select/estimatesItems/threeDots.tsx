@@ -7,8 +7,10 @@ interface INodeElement {
 
 const ThreeDots: FC<INodeElement> = ({ onClick }) => {
   return (
-    <div className={styles.dots__container} onClick={onClick}>
-      <div className={styles.threeDots__dot}></div>
+    <div className={styles.dots__container}>
+      <div className={styles.threeDots__dot} onClick={onClick}>
+        3
+      </div>
       <div className={styles.threeDots__dot}></div>
       <div className={styles.threeDots__dot}></div>
     </div>
