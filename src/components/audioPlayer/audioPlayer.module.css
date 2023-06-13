@@ -1,0 +1,64 @@
+.container {
+  box-sizing: border-box;
+  max-width: 352px;
+  padding: 12px 20px;
+  background: var(--popover-border);
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background: var(--text-color-light1);
+  margin: 0 8px 0 12px;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.timer {
+  font: 15px/22px 'SanFrancisco';
+  font-weight: 400;
+  color: var(--text-color-header-dark);
+}
+
+.progress {
+  margin: 0 18px 0 0;
+  height: 5px;
+  -webkit-appearance: none;
+  max-width: 154px;
+  width: 100%;
+  border-radius: 8px;
+  background: #adbfdf;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 0px;
+  width: 0px;
+}
+
+.icon {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon:hover > svg > path {
+  fill: var(--button-backgroud-hover);
+}
+
+.closeIcon {
+  margin-left: 22px;
+}

@@ -11,7 +11,6 @@ interface ICallsTable {
 }
 
 const CallsTable: FC<ICallsTable> = ({ callsList, isLoading = false }) => {
-  console.log(callsList);
   return (
     <div className={styles.container}>
       <HeaderTable />
