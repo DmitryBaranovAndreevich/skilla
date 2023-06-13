@@ -5,6 +5,6 @@ interface ISource {
   source: string;
 }
 
-const Source: FC<ISource> = ({ source }) => <p className={styles.cell}>{source || '  '}</p>;
+const Source: FC<ISource> = ({ source }) => <p className={styles.cell}>{source || 'Yandex'}</p>;
 
 export default Source;

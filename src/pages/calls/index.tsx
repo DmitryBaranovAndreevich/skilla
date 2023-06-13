@@ -25,7 +25,7 @@ const Calls = () => {
   return (
     <div className={styles.container}>
       <CallsHeader />
-      {/* <CallsTable callsList={callsList?.results} /> */}
+      <CallsTable callsList={callsList?.results} />
       {rec && <AudioPlayer track={rec} />}
     </div>
   );

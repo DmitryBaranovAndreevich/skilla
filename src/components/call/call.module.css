@@ -1,11 +1,10 @@
 .container {
-  padding: 16px 0;
+  padding: 17px 15px;
   display: grid;
   grid-template-columns:
-    minmax(20px, 50px) minmax(50px, 80px) minmax(80px, 130px) minmax(120px, 280px)
-    minmax(100px, 200px) minmax(80px, 1fr) minmax(80px, 120px);
+    20px 85px 120px minmax(100px, 220px)
+    220px 100px minmax(80px, 600px);
   grid-row: 50px;
-  justify-content: space-between;
   justify-items: center;
   border-bottom: 1px solid var(--popover-border);
   align-items: center;
@@ -23,6 +22,7 @@
   font: 15px/21px 'SanFrancisco';
   font-weight: 400;
   color: var(--text-color-light-grey);
+  text-align: end;
 }
 
 .cell_position_start {
@@ -31,17 +31,26 @@
 }
 
 .cell_padding_small {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 50px;
 }
 
 .cell_padding_big {
-  padding: 0 0 0 85px;
+  padding: 0 0 0 200px;
 }
 
 .avatar {
   display: block;
   width: 32px;
-  height: 32px;
+  height: 30px;
   object-fit: cover;
   margin: 0 auto;
+}
+
+.cell_disp_flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.playerContainer {
+margin-left: 100px;
 }

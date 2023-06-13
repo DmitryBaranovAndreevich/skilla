@@ -1,6 +1,7 @@
 .container {
   box-sizing: border-box;
   max-width: 352px;
+  width: 100%;
   padding: 12px 20px;
   background: var(--popover-border);
   border-radius: 48px;

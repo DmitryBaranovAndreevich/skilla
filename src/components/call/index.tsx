@@ -8,17 +8,28 @@ import CallNumber from './callNumber';
 import Source from './source';
 import CallTime from './callTime';
 import Estimation from './estimation';
+import { useHover } from '@uidotdev/usehooks';
 
-const Call: FC<TCallItem> = ({ in_out, date, person_avatar, partner_data, source, time }) => {
+const Call: FC<TCallItem> = ({
+  in_out,
+  date,
+  person_avatar,
+  partner_data,
+  source,
+  time,
+  record,
+  partnership_id,
+}) => {
+  const [ref, hovering] = useHover();
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <CallType type={in_out} />
       <TimeComponent time={date} />
       <Avatar url={person_avatar} />
       <CallNumber number={partner_data.phone} />
       <Source source={source} />
       <Estimation />
-      <CallTime time={time} />
+      <CallTime time={time} record={record} partner={partnership_id} isHover={hovering} />
     </div>
   );
 };
