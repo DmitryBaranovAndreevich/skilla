@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import AudioPlayer from '../audioPlayer';
 import { RecordApi } from '../../store/api/recordApi';
+import styles from './onPlayerClick.module.css';
 
 interface IOnPlayerClick {
   record: string;
@@ -28,7 +29,7 @@ const OnPlayerClick: FC<IOnPlayerClick> = ({ record, partner }) => {
   }, [record, partner]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={styles.container}>
       <AudioPlayer track={rec} isLoad={loadRef.current} />
     </div>
   );

@@ -22,18 +22,19 @@ export enum SelectType {
   reactNode = 'node',
 }
 
-export interface ISelect {
+export interface ISelect extends React.InputHTMLAttributes<HTMLInputElement> {
   text: string;
   items?: string[] | IItem[];
   type?: SelectType;
 }
 
-const Select: FC<ISelect> = ({ text, items, type = SelectType.text }) => {
+const Select: FC<ISelect> = ({ text, items, type = SelectType.text, ...props }) => {
   const { isResetClick } = useAppSelector((state) => state.filtersReduser);
   const { setActiveFilters } = filtersSlice.actions;
   const dispatch = useAppDispatch();
   const [state, setState] = useState(text);
   const ref = useRef<HTMLDivElement>(null);
+  const inputRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -58,6 +59,11 @@ const Select: FC<ISelect> = ({ text, items, type = SelectType.text }) => {
   useEffect(() => {
     setState(text);
   }, [isResetClick, text]);
+
+  useEffect(() => {
+    const event = new Event('input', { bubbles: true });
+    (inputRef.current as unknown as HTMLElement).dispatchEvent(event);
+  }, [state]);
 
   const callChangeState = useCallback(changeState, [changeState]);
 
@@ -94,6 +100,14 @@ const Select: FC<ISelect> = ({ text, items, type = SelectType.text }) => {
           })()}
           {isOpen ? <ArrowIconUp width="10" height="8" /> : <ArrowIcon width="10" height="8" />}
         </button>
+        <input
+          ref={inputRef}
+          type="text"
+          value={state}
+          className={styles.input}
+          readOnly
+          {...props}
+        />
         {isOpen && (
           <PopOver>
             {(() => {

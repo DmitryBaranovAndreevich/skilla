@@ -1,7 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { callsAPI } from './api/callsService';
 import filtersReduser from './reducers/FiltersSlice';
+import urlReducer from './reducers/UrlSlice';
+
 const rootReduser = combineReducers({
+  urlReducer,
   filtersReduser,
   [callsAPI.reducerPath]: callsAPI.reducer,
 });
