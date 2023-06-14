@@ -8,14 +8,19 @@ import parseDate from '../../service/parseDate';
 
 interface IAudioPlayer {
   track: string;
+  isLoad: boolean;
 }
 
-const AudioPlayer: FC<IAudioPlayer> = ({ track }) => {
+const AudioPlayer: FC<IAudioPlayer> = ({ track, isLoad }) => {
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const audioRef = useRef(new Audio(track));
   const intervalRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    audioRef.current = new Audio(track);
+  }, [track, isLoad]);
 
   const { duration } = audioRef.current;
 
@@ -26,12 +31,13 @@ const AudioPlayer: FC<IAudioPlayer> = ({ track }) => {
   };
 
   useEffect(() => {
+    if (!isLoad) return;
     if (isPlaying) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, isLoad]);
 
   useEffect(() => {
     return () => {
@@ -45,11 +51,11 @@ const AudioPlayer: FC<IAudioPlayer> = ({ track }) => {
 
     intervalRef.current = setInterval(() => {
       setTrackProgress(audioRef.current.currentTime);
-      console.log(trackProgress);
     }, 1000);
   };
 
   useEffect(() => {
+    if (!isLoad) return;
     if (isPlaying) {
       audioRef.current.play();
       startTimer();
@@ -57,7 +63,7 @@ const AudioPlayer: FC<IAudioPlayer> = ({ track }) => {
       clearInterval(intervalRef.current);
       audioRef.current.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, isLoad]);
 
   const onScrub = (value: string) => {
     clearInterval(intervalRef.current);
