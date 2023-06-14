@@ -19,8 +19,8 @@ export type TOrderPayload = Pick<IParams, 'order'>;
 
 const initialState: IInitialState = {
   params: {
-    date_start: '',
     date_end: '',
+    date_start: '',
     in_out: '',
     order: '',
   },

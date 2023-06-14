@@ -3,20 +3,50 @@ import { ReactComponent as CalendarIcon } from '../../../../assets/icon-calendar
 import { ReactComponent as ArrowLeft } from '../../../../assets/arrow-left.svg';
 import { ReactComponent as ArrowRight } from '../../../../assets/arrow-right.svg';
 import PopOver from '../../../UI/popover';
-import { FC, FormEvent, useRef, useState } from 'react';
+import { FC, FormEvent, useEffect, useRef, useState } from 'react';
 import { ISelect } from '../../../select';
 import ClickOutSide from '../../../UI/clickOutSide';
+import { useAppDispatch } from '../../../../hooks/redux';
+import { urlSlice } from '../../../../store/reducers/UrlSlice';
+import getDate from '../../../../service/getDate';
 
 const DaySelect: FC<ISelect> = ({ text, items }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [state, setState] = useState(text);
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const { setDate } = urlSlice.actions;
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const date = new Date();
+    switch (state) {
+      case '3 дня': {
+        const start = new Date(new Date().setDate(new Date().getDate() - 3));
+        dispatch(setDate({ date_start: getDate(start), date_end: getDate(date) }));
+        break;
+      }
+      case 'Неделя': {
+        const start = new Date(new Date().setDate(new Date().getDate() - 7));
+        dispatch(setDate({ date_start: getDate(start), date_end: getDate(date) }));
+        break;
+      }
+      case 'Месяц': {
+        const start = new Date(new Date().setDate(new Date().getDate() - 30));
+        dispatch(setDate({ date_start: getDate(start), date_end: getDate(date) }));
+        break;
+      }
+      case 'Год': {
+        const start = new Date(new Date().setDate(new Date().getDate() - 365));
+        dispatch(setDate({ date_start: getDate(start), date_end: getDate(date) }));
+        break;
+      }
+    }
+  }, [state]);
+
   const onClose = () => {
-    console.log('e');
     setIsOpen(false);
   };
 

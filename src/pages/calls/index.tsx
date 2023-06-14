@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 
 const Calls = () => {
   const { url } = useAppSelector((state) => state.urlReducer);
-  console.log(url);
   const { data: callsList, refetch } = callsAPI.useFetchAllCallsQuery(url ? `?${url}` : '');
 
   useEffect(() => {
